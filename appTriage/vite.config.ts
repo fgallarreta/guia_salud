@@ -16,7 +16,7 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: '/guia_salud/',
+  base: '/guia_salud/appTriage/',
 
   plugins: [
     figmaAssetResolver(),

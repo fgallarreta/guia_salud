@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy All Apps
 
 on:
   push:
@@ -21,15 +21,76 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm ci
+      - name: Build appTriage
+        run: |
+          npm ci
+          npm run build
         working-directory: appTriage
 
-      - run: npm run build
-        working-directory: appTriage
+      - name: Build appTriage2
+        run: |
+          npm ci
+          npm run build
+        working-directory: appTriage2
+
+      - name: Build appTriage3
+        run: |
+          npm ci
+          npm run build
+        working-directory: appTriage3
+
+      - name: Build FuturisticHealthApp
+        run: |
+          npm ci
+          npm run build
+        working-directory: FuturisticHealthApp
+
+      - name: Create site
+        run: |
+          mkdir public
+
+          cp -r appTriage/dist public/appTriage
+          cp -r appTriage2/dist public/appTriage2
+          cp -r appTriage3/dist public/appTriage3
+          cp -r FuturisticHealthApp/dist public/FuturisticHealthApp
+
+          cat > public/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>Guía Salud - Proyectos</title>
+            <style>
+              body{
+                font-family:Arial,sans-serif;
+                max-width:800px;
+                margin:50px auto;
+                padding:20px;
+              }
+              a{
+                display:block;
+                margin:15px 0;
+                padding:15px;
+                border:1px solid #ddd;
+                text-decoration:none;
+                border-radius:8px;
+              }
+            </style>
+          </head>
+          <body>
+            <h1>Proyectos</h1>
+
+            <a href="./appTriage/">App Triage</a>
+            <a href="./appTriage2/">App Triage 2</a>
+            <a href="./appTriage3/">App Triage 3</a>
+            <a href="./FuturisticHealthApp/">Futuristic Health App</a>
+          </body>
+          </html>
+          EOF
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./appTriage/dist
+          path: ./public
 
   deploy:
     needs: build

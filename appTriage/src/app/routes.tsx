@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router';
+import { createHashRouter } from 'react-router';
 import { SplashScreen } from './pages/SplashScreen';
 import { HomeScreen } from './pages/HomeScreen';
 import { SymptomEvaluation } from './pages/SymptomEvaluation';
@@ -7,7 +7,7 @@ import { MapScreen } from './pages/MapScreen';
 import { HistoryScreen } from './pages/HistoryScreen';
 import { SettingsScreen } from './pages/SettingsScreen';
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/',
     Component: SplashScreen

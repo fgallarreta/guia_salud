@@ -1,0 +1,505 @@
+Actúa como un UI/UX Design System Architect Senior especializado en productos de salud digital, accesibilidad y aplicaciones móviles.
+
+# Proyecto
+
+Diseña un Design System completo para una aplicación móvil llamada "Guía Salud".
+
+## Descripción del producto
+
+Guía Salud es una aplicación mobile orientada a ayudar a personas que presentan síntomas, molestias o problemas de salud y necesitan orientación rápida, clara y segura.
+
+La aplicación realiza:
+
+* Evaluación guiada mediante preguntas cerradas.
+* Clasificación de riesgo basada en un sistema de triage de 3 niveles.
+* Recomendaciones orientativas.
+* Detección de señales de alarma.
+* Geolocalización de hospitales, centros de salud y farmacias.
+* Traducción contextual de frases médicas para viajeros.
+* Asistencia conversacional mediante IA.
+
+La aplicación NO reemplaza atención médica profesional.
+
+---
+
+# Perfil de usuarios
+
+Usuarios principales:
+
+* Personas con síntomas o molestias.
+* Viajeros nacionales e internacionales.
+* Usuarios con bajo conocimiento médico.
+* Adultos mayores.
+* Usuarios bajo estrés o ansiedad por una situación de salud.
+
+---
+
+# Personalidad de marca
+
+La interfaz debe transmitir:
+
+* Seguridad
+* Confianza
+* Claridad
+* Profesionalismo
+* Empatía
+* Modernidad
+* Simplicidad
+* Accesibilidad
+
+Evitar:
+
+* Estética hospitalaria fría.
+* Exceso de colores.
+* Interfaces recargadas.
+* Apariencia alarmista.
+
+---
+
+# Estilo visual
+
+Inspiración principal:
+
+* shadcn/ui
+* Minimalismo moderno
+* Mobile-first
+* Diseño limpio y altamente legible
+
+Características:
+
+* Mucho espacio en blanco.
+* Jerarquías claras.
+* Componentes simples.
+* Bordes suaves.
+* Elevaciones mínimas.
+* Interacciones claras.
+* Alta legibilidad.
+
+---
+
+# Tecnologías
+
+Frontend:
+
+* React Native
+* Expo
+
+Backend:
+
+* NestJS
+
+Equipo:
+
+* 2 desarrolladores
+
+Nivel de madurez:
+
+* MVP desde cero
+
+---
+
+# Accesibilidad
+
+Objetivo mínimo:
+
+WCAG AA
+
+Consideraciones:
+
+* Contraste elevado.
+* Tipografías legibles.
+* Botones grandes.
+* Áreas táctiles mínimas de 44x44 px.
+* Compatible con adultos mayores.
+* Evitar depender exclusivamente del color para transmitir significado.
+
+---
+
+# Sistema de Triage
+
+Definir un sistema semántico completo para:
+
+## Verde
+
+Nivel:
+Autocuidado
+
+Significado:
+Situación de baja urgencia.
+
+Acciones:
+Consejos y seguimiento.
+
+---
+
+## Amarillo
+
+Nivel:
+Consulta médica recomendada.
+
+Significado:
+Requiere evaluación profesional.
+
+Acciones:
+Derivación y recomendaciones.
+
+---
+
+## Rojo
+
+Nivel:
+Atención inmediata.
+
+Significado:
+Posible urgencia médica.
+
+Acciones:
+Derivación urgente y geolocalización inmediata.
+
+---
+
+# Design Tokens
+
+Crear:
+
+## Color Tokens
+
+### Brand
+
+Primary
+Primary Foreground
+Secondary
+Accent
+Muted
+
+### Semantic
+
+Success
+Warning
+Danger
+Info
+
+### Triage
+
+Triage Green
+Triage Yellow
+Triage Red
+
+### Neutral Scale
+
+50
+100
+200
+300
+400
+500
+600
+700
+800
+900
+950
+
+Incluir:
+
+* HEX
+* RGB
+* Uso recomendado
+
+---
+
+## Typography
+
+Usar escala modular para mobile.
+
+Definir:
+
+* Display
+* H1
+* H2
+* H3
+* Title
+* Body Large
+* Body
+* Body Small
+* Caption
+* Label
+
+Especificar:
+
+* px
+* rem
+* line-height
+* font-weight
+
+---
+
+## Spacing
+
+Basado en grid de 8pt.
+
+Definir:
+
+4
+8
+12
+16
+24
+32
+40
+48
+64
+80
+
+Aplicar a:
+
+* Margin
+* Padding
+* Gaps
+* Layouts
+
+---
+
+## Radius
+
+Definir:
+
+* Small
+* Medium
+* Large
+* XL
+
+---
+
+## Shadows
+
+Definir:
+
+* Level 1
+* Level 2
+* Level 3
+
+Mantener estética minimalista.
+
+---
+
+# Dark Mode
+
+Diseñar:
+
+* Light Theme
+* Dark Theme
+
+Usando Variables de Figma.
+
+Todo componente debe soportar ambos modos.
+
+---
+
+# Arquitectura Figma
+
+Crear estructura completa.
+
+## Página 01
+
+Foundations
+
+* Colors
+* Typography
+* Grid
+* Spacing
+* Radius
+* Elevation
+* Icons
+
+---
+
+## Página 02
+
+Components
+
+### Atoms
+
+* Button
+* Icon Button
+* Input
+* Badge
+* Avatar
+* Divider
+* Switch
+* Checkbox
+* Radio
+
+---
+
+### Molecules
+
+* Search Bar
+* Form Field
+* Triage Badge
+* Alert Banner
+* Question Selector
+
+---
+
+### Organisms
+
+* Triage Result Card
+* Recommendation Card
+* Medical Facility Card
+* Pharmacy Card
+* Translation Card
+* Chat Message
+* Chat Composer
+* Bottom Sheet
+* Navigation Bar
+
+---
+
+## Página 03
+
+Patterns
+
+* Onboarding
+* Symptom Flow
+* Triage Flow
+* Chat Flow
+* Search Flow
+* Map Flow
+
+---
+
+## Página 04
+
+Documentation
+
+Documentación de uso.
+
+---
+
+# Componentes críticos
+
+Documentar:
+
+## Button
+
+Estados:
+
+* Default
+* Hover
+* Pressed
+* Disabled
+* Loading
+
+Variantes:
+
+* Primary
+* Secondary
+* Outline
+* Ghost
+* Destructive
+
+---
+
+## Question Card
+
+Elemento principal del producto.
+
+Características:
+
+* Selección táctil.
+* Iconografía.
+* Título.
+* Descripción opcional.
+
+Estados:
+
+* Default
+* Selected
+* Disabled
+
+---
+
+## Triage Result Card
+
+Variantes:
+
+* Verde
+* Amarillo
+* Rojo
+
+Debe incluir:
+
+* Nivel
+* Explicación
+* Próximos pasos
+* CTA principal
+
+---
+
+## Medical Facility Card
+
+Información:
+
+* Nombre
+* Distancia
+* Tipo
+* Horario
+* Estado
+
+Acciones:
+
+* Navegar
+* Llamar
+
+---
+
+## Translation Card
+
+Información:
+
+* Frase local
+* Traducción
+* Botón copiar
+* Botón reproducir audio
+
+---
+
+## Chat Components
+
+Diseñar:
+
+* User Message
+* AI Message
+* Typing State
+* Suggested Actions
+
+---
+
+# Navegación
+
+Crear propuesta mobile para:
+
+* Inicio
+* Evaluación
+* Resultado
+* Mapa
+* Traducción
+* Chat IA
+* Perfil
+
+---
+
+# Entregables
+
+Generar:
+
+1. Sistema completo de Design Tokens.
+2. Variables de Figma.
+3. Componentes con variantes.
+4. Auto Layout en todos los componentes.
+5. Documentación de uso.
+6. Reglas de accesibilidad.
+7. Naming Convention para diseño y desarrollo.
+8. Estructura preparada para React Native.
+9. Light Theme y Dark Theme.
+10. Librería lista para escalar de MVP a producto enterprise.
